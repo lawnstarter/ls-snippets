@@ -1,0 +1,433 @@
+{
+    "Log": {
+        "prefix": "lslog",
+        "body": ["console.log($1);"],
+        "description": "Console log"
+	},
+	"Destructuring From Props": {
+        "prefix": "lsdsp",
+        "body": ["const { $0 } = this.props;"],
+        "description": "Destructuring from props"
+	},
+	"Destructuring From State": {
+        "prefix": "lsdss",
+        "body": ["const { $0 } = this.state;"],
+        "description": "Destructuring from state"
+	},
+	"Destructuring Vue": {
+        "prefix": "lsdsv",
+        "body": ["const { $1 } = this.$0;"],
+        "description": "Destructuring from state"
+    },
+    "useAlexStyle": {
+		"prefix": "lsua",
+		"body": [
+			"useAlexStyle"
+		]
+	},
+	"usePrimaryFont": {
+		"prefix": "lsupf",
+		"body": [
+			"usePrimaryFont"
+		]
+	},
+	"React Function": {
+		"prefix": "lsrfun",
+		"body": [
+			"$Foo() {",
+			"    $0",
+			"};"
+		]
+	},
+	"Vue Function": {
+		"prefix": "lsvfun",
+		"body": [
+			"$Foo() {",
+			"    $0",
+			"},"
+		]
+	},
+	"Template Literal": {
+		"prefix": "lstl",
+		"body": [
+			"`$2${$1}$0`"
+		]
+	},
+	"Flex/Center/Center - Javascript": {
+		"prefix": "lsjfcc",
+		"body": [
+			"display: 'flex',",
+			"justifyContent: 'center',",
+			"alignItems: 'center',"
+		]
+	},
+	"Flex/Start/Center - Javascript": {
+		"prefix": "lsjfsc",
+		"body": [
+			"display: 'flex',",
+			"justifyContent: 'flex-start',",
+			"alignItems: 'center',"
+		]
+	},
+	"Flex/Between/Center - Javascript": {
+		"prefix": "lsjfbc",
+		"body": [
+			"display: 'flex',",
+			"justifyContent: 'space-between',",
+			"alignItems: 'center',"
+		]
+	},
+	"Constructor": {
+		"prefix": "lscon",
+		"body": [
+			"  constructor(props) {",
+			"    super(props)",
+			"    this.state = {",
+			"",
+			"    };",
+			"  };"
+		]
+	},
+	"React Native Redux Component": {
+		"prefix": "lsrnr",
+		"body": [
+			"import React, { PureComponent } from 'react';",
+			"import { connect } from 'react-redux'",
+			"import PropTypes from 'prop-types';",
+			"import { fake_action } from 'src/store/actions';",
+			"import { View, StyleSheet } from 'react-native';",
+			"import { lsColorsAlex, LsText } from 'ls-react-native-common';",
+			"import _ from 'lodash';",
+			"",
+			"export class Ls$Foo extends PureComponent {",
+			"  static propTypes = {",
+			"isUpdating: PropTypes.bool,",
+			"fakeAction: PropTypes.func.isRequired",
+			"};",
+			"  static defaultProps = {",
+			"  isUpdating: false",
+			"};",
+			"",
+			"constructor(props) {",
+			"  super(props);",
+			"",
+			"  this.state={",
+			"    someState: false",
+			"  };",
+			"};",
+			"",
+			"  render() {",
+			"    return (",
+			"      <View style={styles.container}>",
+			"        <LsText style={styles.welcome} usePrimaryFont fontSize={14} color={lsColorsAlex.primary} testID='welcome_text'>Welcome</LsText>",
+			"      </View>",
+			"    );",
+			"  };",
+			"};",
+			"",
+			"const styles = StyleSheet.create({",
+			"  container: {",
+			"    flex: 1,",
+			"  },",
+			"  welcome: {",
+			"    fontSize: 20,",
+			"  }",
+			"});",
+			"",
+			"const mapStateToProps = (state) => {",
+			"return {",
+			"fake_state: isUpdating,",
+			"};",
+			"};",
+			"",
+			"const mapDispatchToProps = {",
+			"  fakeAction: properties_addProperty,",
+			"};",
+			"",
+			"export const $Foo = connect(",
+			"  mapStateToProps,",
+			"  mapDispatchToProps",
+			")(Ls$Foo);"
+		]
+	},
+	"React Native Non-Redux Component": {
+		"prefix": "lsrn",
+		"body": [
+			"import React, { PureComponent } from 'react';",
+			"import PropTypes from 'prop-types';",
+			"import { View, StyleSheet } from 'react-native';",
+			"import { lsColorsAlex, LsText } from 'ls-react-native-common';",
+			"import _ from 'lodash';",
+			"",
+			"export class Ls$Foo extends PureComponent {",
+			"  static propTypes = {",
+			"  someProp: PropTypes.bool,",
+			"};",
+			"  static defaultProps = {",
+			"  someProp: false",
+			"};",
+			"",
+			"constructor(props) {",
+			"  super(props);",
+			"",
+			"  this.state={",
+			"    someState: false",
+			"  };",
+			"};",
+			"",
+			"  render() {",
+			"    return (",
+			"      <View style={styles.container}>",
+			"        <LsText style={styles.welcome} usePrimaryFont fontSize={14} color={lsColorsAlex.primary} testID='welcome_text'>Welcome</LsText>",
+			"      </View>",
+			"    );",
+			"  };",
+			"};",
+			"",
+			"const styles = StyleSheet.create({",
+			"  container: {",
+			"    flex: 1,",
+			"  },",
+			"  welcome: {",
+			"    fontSize: 20,",
+			"  }",
+			"});"
+		]
+	},
+	"React Test": {
+		"prefix": "lsrt",
+		"body": [
+            "import React from 'react';",
+            "import { findTestIDInWrapper } from 'test/helpers';",
+            "import { $Foo } from './';",
+            "",
+            "describe('$Foo', () => {",
+            "    let mockProps;",
+            "    beforeEach(() => {",
+            "        mockProps = {",
+            "            isLoading: false,",
+            "        };",
+            "",
+            "    });",
+            
+            "    it('should match snapshot', () => {",
+            "       const wrapper =  shallow(<$Foo {...mockProps} />);",
+            "",
+            "        expect(wrapper).toMatchSnapshot();",
+            "    });",
+            "",
+            "    it('should show loading when isLoading', () => {",
+            "        const wrapper =  shallow(<$Foo {...mockProps} />);",
+            "",
+            "        const loading = findTestIDInWrapper({wrapper, testID: 'loading'})",
+            "",
+            "        expect(loading).toHaveLength(1);",
+            "    });",
+            "",
+            "});"
+
+		]
+	},
+    "Vue Component": {
+        "prefix": "lsvc",
+        "body": [
+            "<template>",
+            "    <div class='component'><p>My Component</p></div>",
+            "</template>",
+            "",
+            "<script>",
+            "import { mapActions, mapState, mapGetters } from 'vuex';",
+			"import VueTypes from 'vue-types';",
+			"import _ from 'lodash';",
+            "",
+            "export default {",
+            "  name: '$Foo',",
+            "  components: {},",
+            "  props: {",
+            "   trackId: VueTypes.string.isRequired,",
+            "   value: VueTypes.number.isRequired,",
+            "  },",
+            "  data() {",
+            "     return {",
+            "         someData: true",
+            "     };",
+            "  },",
+            " computed: {",
+            "     ...mapState(['fakeState']),",
+            "     ...mapGetters([FAKE_GETTER]),",
+            "  },",
+            "  methods: {",
+            "   ...mapActions([FAKE_ACTION]),",
+            "   }",
+            "};",
+            "</script>",
+            "",
+
+            "<style lang='scss' scoped>",
+            "    .component {",
+            "        padding: 30px;",
+            "    }",
+            "</style>"
+        ]
+	},
+	"Flex/Center/Center - SCSS": {
+		"prefix": "lsfcc",
+		"body": [
+			"display: flex;",
+			"justify-content: center;",
+			"align-items: center;"
+		]
+	},
+	"Flex/Start/Center - SCSS": {
+		"prefix": "lsfsc",
+		"body": [
+			"display: flex;",
+			"justify-content: flex-start;",
+			"align-items: center;"
+		]
+	},
+	"Flex/Between/Center - SCSS": {
+		"prefix": "lsfbc",
+		"body": [
+			"display: flex;",
+			"justify-content: space-between;",
+			"align-items: center;"
+		]
+	},
+	"Media Query Desktop": {
+		"prefix": "lsmqd",
+		"body": [
+			"@media (min-width: $desktop) {",
+			"    $0",
+			"}"
+		]
+	},
+	"Media Query Mobile": {
+		"prefix": "lsmqm",
+		"body": [
+			"@media (max-width: $mobile-max-width)",
+			"    $0",
+			"}"
+		]
+	},
+	"Vue Test - Router + Vuex": {
+		"prefix": "lsvtrv",
+		"body": [
+			"import { shallowMount, createLocalVue, mount } from '@vue/test-utils';",
+			"import Vuex from 'vuex';",
+			"import VueRouter from 'vue-router';",
+			"import { findTestIDInWrapper } from '@/tests/helpers';",
+			"import $Foo from './$Foo.vue';",
+			"",
+			"const localVue = createLocalVue();",
+			"localVue.use(Vuex);",
+			"localVue.use(VueRouter);",
+			"",
+			"const router = new VueRouter();",
+			"",
+			"describe('$Foo component', () => {",
+			"let mockStore;",
+			"let mockProps",
+			"beforeEach(() => {",
+			"mockStore = new Vuex.Store({",
+			"state: {},",
+			"});",
+			"mocProps = {};",
+			"jest.resetAllMocks();",
+			"});",
+			"",
+			" it('should render correct rewards text', () => {",
+			"const wrapper = shallowMount($Foo, {",
+			"store: mockStore,",
+			"propsData: mockProps,",
+			"localVue,",
+			"router,",
+			"});",
+			"",
+			"const share = findTestIDInWrapper({",
+			"wrapper,",
+			"testID: 'share',",
+			"});",
+			"",
+			"expect(share.text()).toEqual('Free Services');",
+			"});",
+			"",
+			"it('should call push for services link', () => {",
+			"const wrapper = mount($Foo, {",
+			"store: mockStore,",
+			"propsData: mockProps,",
+			"localVue,",
+			"router,",
+			"});",
+			"",
+			"jest.spyOn(wrapper.vm, 'onClick');",
+			"jest.spyOn(wrapper.vm.$router, 'push');",
+			"",
+			"const services = findTestIDInWrapper({",
+			"wrapper,",
+			"testID: 'services',",
+			"});",
+			"",
+			"services.trigger('click');",
+			"",
+			"expect(wrapper.vm.$router.push).toHaveBeenCalledWith(",
+			"expect.objectContaining({ path: '/services' })",
+			");",
+			"",
+			"expect(wrapper.vm.onClick).toHaveBeenCalledTimes(1);",
+			"expect(wrapper.emitted('closeMenu')).toHaveLength(1);",
+			"});",
+			"});"
+		]
+	},
+	"Vuex Initial State":{
+		"prefix": "lsvxis",
+		"body": [
+          "const createInitialState = () => {",
+          "    return {",
+          "        loadingStatus: {",
+          "            isLoading: false,",
+          "            isUpdating: false,",
+          "        },",
+          "    };",
+          "};"
+		]
+	},
+	"Vuex Mutation": {
+		"prefix": "lsvxmu",
+		"body": [
+         "[$FOO__MUTATE_LOADING_STATUS](state, payload) {",
+         "    _.assign(state.loadingStatus, payload);",
+         "},"
+		]
+	},
+	"Vuex Action": {
+		"prefix": "lsvxac",
+		"body": [
+            "[$FOO__DO_SOMETHING]({ commit, rootState }, {}) {",
+            "",
+            "    commit($FOO__MUTATE_LOADING_STATUS, {",
+            "        isUpdating: true,",
+            "    });",
+            "    const { customer_id } = rootState.auth.user;",
+            "    return lsApiService",
+            "        .request({",
+            "            method: 'POST',",
+            "            route: `/customers/${customer_id}/.........`,",
+            "            payload,",
+            "    })",
+            "    .then(({ data }) => {",
+            "        commit($FOO_COMMIT_SOMETHING, data);",
+            "    })",
+            "    .catch((error) => {",
+            "        lsErrorService.log({ error, showAlert: true });",
+            "    })",
+            "    .finally(() => {",
+            "        commit($FOO__MUTATE_LOADING_STATUS, {",
+            "            isUpdating: false,",
+            "        });",
+            "    });",
+            "},"
+		]
+	}
+}
