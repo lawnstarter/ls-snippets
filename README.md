@@ -32,8 +32,8 @@ lsvxmu - vuex mutation
 lsvxac - vuex action  
   
 ## Javascript (React/Vue):  
-lslog - console.log()   
-lsobj - js obbject
+lslog - console.log()    
+lsobj - js obbject  
 lstl - template literal  
   
   
