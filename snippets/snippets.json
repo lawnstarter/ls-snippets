@@ -1,91 +1,46 @@
 {
-    "Log": {
-        "prefix": "lslog",
-        "body": ["console.log($1);"],
-        "description": "Console log"
-	},
-	"Destructuring From Props": {
-        "prefix": "lsdsp",
-        "body": ["const { $0 } = this.props;"],
-        "description": "Destructuring from props"
-	},
-	"Destructuring From State": {
-        "prefix": "lsdss",
-        "body": ["const { $0 } = this.state;"],
-        "description": "Destructuring from state"
-	},
-	"Destructuring Vue": {
-        "prefix": "lsdsv",
-        "body": ["const { $1 } = this.$0;"],
-        "description": "Destructuring from state"
-    },
-    "useAlexStyle": {
-		"prefix": "lsua",
+	"React Native Non-Redux Component": {
+		"prefix": "lsrn",
 		"body": [
-			"useAlexStyle"
-		]
-	},
-	"usePrimaryFont": {
-		"prefix": "lsupf",
-		"body": [
-			"usePrimaryFont"
-		]
-	},
-	"React Function": {
-		"prefix": "lsrfun",
-		"body": [
-			"$Foo() {",
-			"    $0",
-			"};"
-		]
-	},
-	"Vue Function": {
-		"prefix": "lsvfun",
-		"body": [
-			"$Foo() {",
-			"    $0",
-			"},"
-		]
-	},
-	"Template Literal": {
-		"prefix": "lstl",
-		"body": [
-			"`$2${$1}$0`"
-		]
-	},
-	"Flex/Center/Center - Javascript": {
-		"prefix": "lsjfcc",
-		"body": [
-			"display: 'flex',",
-			"justifyContent: 'center',",
-			"alignItems: 'center',"
-		]
-	},
-	"Flex/Start/Center - Javascript": {
-		"prefix": "lsjfsc",
-		"body": [
-			"display: 'flex',",
-			"justifyContent: 'flex-start',",
-			"alignItems: 'center',"
-		]
-	},
-	"Flex/Between/Center - Javascript": {
-		"prefix": "lsjfbc",
-		"body": [
-			"display: 'flex',",
-			"justifyContent: 'space-between',",
-			"alignItems: 'center',"
-		]
-	},
-	"Constructor": {
-		"prefix": "lscon",
-		"body": [
-			"  constructor(props) {",
-			"    super(props)",
-			"    this.state = {",
+			"import React, { PureComponent } from 'react';",
+			"import PropTypes from 'prop-types';",
+			"import { View, StyleSheet } from 'react-native';",
+			"import { lsColorsAlex, LsText } from 'ls-react-native-common';",
+			"import _ from 'lodash';",
 			"",
-			"    };",
-			"  };"
+			"export class Ls$Foo extends PureComponent {",
+			"  static propTypes = {",
+			"  someProp: PropTypes.bool,",
+			"};",
+			"  static defaultProps = {",
+			"  someProp: false",
+			"};",
+			"",
+			"constructor(props) {",
+			"  super(props);",
+			"",
+			"  this.state={",
+			"    someState: false",
+			"  };",
+			"};",
+			"",
+			"  render() {",
+			"    return (",
+			"      <View style={styles.container}>",
+			"        <LsText style={styles.welcome} usePrimaryFont fontSize={14} color={lsColorsAlex.primary} testID='welcome_text'>Welcome</LsText>",
+			"      </View>",
+			"    );",
+			"  };",
+			"};",
+			"",
+			"const styles = StyleSheet.create({",
+			"  container: {",
+			"    flex: 1,",
+			"  },",
+			"  welcome: {",
+			"    fontSize: 20,",
+			"  }",
+			"});"
 		]
 	},
 	"React Native Redux Component": {
@@ -150,48 +105,75 @@
 			")(Ls$Foo);"
 		]
 	},
-	"React Native Non-Redux Component": {
-		"prefix": "lsrn",
+	"Constructor": {
+		"prefix": "lscon",
 		"body": [
-			"import React, { PureComponent } from 'react';",
-			"import PropTypes from 'prop-types';",
-			"import { View, StyleSheet } from 'react-native';",
-			"import { lsColorsAlex, LsText } from 'ls-react-native-common';",
-			"import _ from 'lodash';",
+			"  constructor(props) {",
+			"    super(props)",
+			"    this.state = {",
 			"",
-			"export class Ls$Foo extends PureComponent {",
-			"  static propTypes = {",
-			"  someProp: PropTypes.bool,",
-			"};",
-			"  static defaultProps = {",
-			"  someProp: false",
-			"};",
-			"",
-			"constructor(props) {",
-			"  super(props);",
-			"",
-			"  this.state={",
-			"    someState: false",
-			"  };",
-			"};",
-			"",
-			"  render() {",
-			"    return (",
-			"      <View style={styles.container}>",
-			"        <LsText style={styles.welcome} usePrimaryFont fontSize={14} color={lsColorsAlex.primary} testID='welcome_text'>Welcome</LsText>",
-			"      </View>",
-			"    );",
-			"  };",
-			"};",
-			"",
-			"const styles = StyleSheet.create({",
-			"  container: {",
-			"    flex: 1,",
-			"  },",
-			"  welcome: {",
-			"    fontSize: 20,",
-			"  }",
-			"});"
+			"    };",
+			"  };"
+		]
+	},
+	"React Bind": {
+		"prefix": "lsrb",
+		"body": [
+			"this.$Foo = this.$Foo.bind(this);"
+		]
+	},
+	"React Function": {
+		"prefix": "lsrfun",
+		"body": [
+			"$Foo() {",
+			"    $0",
+			"};"
+		]
+	},
+	"Destructuring From Props": {
+        "prefix": "lsdsp",
+        "body": ["const { $0 } = this.props;"],
+        "description": "Destructuring from props"
+	},
+	"Destructuring From State": {
+        "prefix": "lsdss",
+        "body": ["const { $0 } = this.state;"],
+        "description": "Destructuring from state"
+	},
+	"useAlexStyle": {
+		"prefix": "lsua",
+		"body": [
+			"useAlexStyle"
+		]
+	},
+	"usePrimaryFont": {
+		"prefix": "lsupf",
+		"body": [
+			"usePrimaryFont"
+		]
+	},
+	"Flex/Center/Center - Javascript": {
+		"prefix": "lsjfcc",
+		"body": [
+			"display: 'flex',",
+			"justifyContent: 'center',",
+			"alignItems: 'center',"
+		]
+	},
+	"Flex/Start/Center - Javascript": {
+		"prefix": "lsjfsc",
+		"body": [
+			"display: 'flex',",
+			"justifyContent: 'flex-start',",
+			"alignItems: 'center',"
+		]
+	},
+	"Flex/Between/Center - Javascript": {
+		"prefix": "lsjfbc",
+		"body": [
+			"display: 'flex',",
+			"justifyContent: 'space-between',",
+			"alignItems: 'center',"
 		]
 	},
 	"React Test": {
@@ -228,7 +210,7 @@
 
 		]
 	},
-    "Vue Component": {
+	"Vue Component": {
         "prefix": "lsvc",
         "body": [
             "<template>",
@@ -269,6 +251,19 @@
             "    }",
             "</style>"
         ]
+	},
+	"Vue Function": {
+		"prefix": "lsvfun",
+		"body": [
+			"$Foo() {",
+			"    $0",
+			"},"
+		]
+	},
+	"Destructuring Vue": {
+        "prefix": "lsdsv",
+        "body": ["const { $1 } = this.$0;"],
+        "description": "Destructuring from state"
 	},
 	"Flex/Center/Center - SCSS": {
 		"prefix": "lsfcc",
@@ -429,5 +424,25 @@
             "    });",
             "},"
 		]
+	},
+	"Log": {
+        "prefix": "lslog",
+        "body": ["console.log($1);"],
+        "description": "Console log"
+	},
+	"Object": {
+		"prefix": "lsobj",
+		"body": [
+			"$Foo: {",
+				"$0",
+			"},"
+		]
+	},
+	"Template Literal": {
+		"prefix": "lstl",
+		"body": [
+			"`$2${$1}$0`"
+		]
 	}
+	
 }

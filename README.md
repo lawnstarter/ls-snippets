@@ -6,18 +6,21 @@ Warning!!! Some of these patterns and imported packages are specific to our comp
 lsrn - react native component (no redux)  
 lsrnr - react native component redux  
 lscon - react constructor  
+lsrb - react bind
 lsrfun - react function  
+lsdsp - destructuring from props  
 lsdss - destructuring from state  
 lsua - useAlexStyle  
 lsupf - usePrimaryFont  
-lsrt - react native test    
 lsjfcc - javascript flex/center/center  
 lsjfsc -  javascript flex/start/center  
 lsjfbc - javascript flex/between/center  
+lsrt - react native test    
   
 ## Vue:  
 lsvc - vue component (w/vuex)    
 lsvfun - vue function  
+lsdsv - destructuring
 lsfcc - flex/center/center  
 lsfsc -  flex/start/center  
 lsfbc - flex/between/center  
@@ -30,8 +33,8 @@ lsvxac - vuex action
   
 ## Javascript (React/Vue):  
 lslog - console.log()   
+lsobj - js obbject
 lstl - template literal  
-lsdsp - destructuring from props  
   
   
 ## Features  
